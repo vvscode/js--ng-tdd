@@ -1,6 +1,5 @@
 module.exports = function(config) {
   config.set({
-    //plugins:['karma-mocha', 'karma-mocha-reporter', 'karma-phantomjs-launcher',],
     browsers: ['PhantomJS'],
     frameworks: ['mocha'],
     preprocessors: {
