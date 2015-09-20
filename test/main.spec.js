@@ -44,4 +44,30 @@ describe('The Address Book App', function() {
       assert.isArray($scope.contacts);
     })
   });
+
+  describe('thi poper filter', function() {
+    var proper;
+
+    beforeEach(function() {
+      module('AddressBook');
+      inject(function($injector) {
+        proper = $injector.get('$filter')('proper');
+      });
+    });
+
+    it('should proper case a string', function() {
+      expect(proper('ned stark')).to.equal('Ned Stark');
+      expect(proper('harry harrison')).to.equal('Harry Harrison');
+    });
+
+    it('should take a number and return as string', function() {
+      expect(proper(123)).to.equal('123');
+    });
+
+    it('should throw error on non string/number input', function() {
+      assert.throws(function() {
+        proper(undefined);
+      });
+    });
+  });
 });
