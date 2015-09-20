@@ -18,7 +18,9 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.28",
+    "istanbul": "^0.3.20",
     "karma": "^0.13.9",
+    "karma-coverage": "^0.5.2",
     "karma-phantomjs-launcher": "^0.2.1",
     "mocha": "^2.3.2",
     "phantomjs": "^1.9.18"
