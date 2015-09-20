@@ -40,10 +40,26 @@ gulp.task('serve-test', function() {
     .on('change', browserSync.reload);
 });
 
-gulp.task('test-browser', function() {
+gulp.task('serve-coverage', ['test-browser'], function() {
+  browserSync.init({
+    notify: false,
+    port: 7777,
+    server: {
+      baseDir: ['test/coverage']
+    }
+  });
+
+  gulp.watch(['test/**/*.*'])
+    .on('change', browserSync.reload);
+});
+
+gulp.task('test-browser', function(done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true,
     reporters: ['mocha', 'coverage']
+  }, function() {
+    done();
   });
 });
+
