@@ -1,10 +1,14 @@
 angular.module('AddressBook', [])
   .service('contactService', function($http) {
     var contactService = this;
-    this.contacts = [];
+    contactService.contacts = [];
     $http.get('http://localhost:9001/contacts').then(function(res) {
       contactService.contacts.push.apply(contactService.contacts, res.data || []);
     });
+
+    contactService.addContact = function(contact) {
+      contactService.contacts.push(contact);
+    };
   })
   .controller('ContactController', function(contactService, $scope) {
     $scope.contacts = contactService.contacts;
@@ -29,4 +33,12 @@ angular.module('AddressBook', [])
       },
       template: '<span class="avatar">{{name[0] | proper}}</span>'
     };
+  })
+  .controller('AddContact', function($scope, contactService) {
+    $scope.addContact = function() {
+      contactService.addContact($scope.contact);
+      $scope.contact = {};
+    };
+
+
   });
