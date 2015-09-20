@@ -1,0 +1,19 @@
+{
+  "name": "js--np-tdd",
+  "version": "0.0.0",
+  "authors": [
+    "Vasil Vanchuk <v.vanchuk@tut.by>"
+  ],
+  "description": "Intoduction into Angular TDD",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4"
+  }
+}
