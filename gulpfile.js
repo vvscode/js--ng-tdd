@@ -66,9 +66,9 @@ gulp.task('test-browser', function(done) {
 
 gulp.task('protractor', ['serve'], function(done) {
   gulp.src(['text/e2e/*.js'])
-  .pipe(protractor({
+    .pipe(protractor({
       configFile: 'test/protractor.config.js',
       args: ['--baseUrl', 'http://localhost:8000']
     }))
-  .on('end', done);
+    .on('end', done);
 });

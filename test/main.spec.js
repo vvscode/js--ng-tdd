@@ -40,7 +40,7 @@ describe('The Address Book App', function() {
     });
 
     it('should store an array of contact in scope', function() {
-      $controller('ContactController', {$scope: $scope, contactService: contactService});
+      $controller('ContactController', { $scope: $scope, contactService: contactService });
       assert.isArray($scope.contacts);
     })
   });
@@ -78,7 +78,7 @@ describe('The Address Book App', function() {
 
     it('should display the capitalized first letter of a name', function() {
       inject(function($rootScope, $compile) {
-        $rootScope.contact = {name: 'john doe'};
+        $rootScope.contact = { name: 'john doe' };
         var element = $compile('<avatar name=contact.name />')($rootScope);
         $rootScope.$digest();
         var dirText = element.text();

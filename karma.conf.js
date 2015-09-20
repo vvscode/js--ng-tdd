@@ -11,7 +11,7 @@ module.exports = function(config) {
         type: 'html',
         dir: 'test/coverage',
         subdir: '.'
-      },{
+      }, {
         type: 'text'
       }]
     },

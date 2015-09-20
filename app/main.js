@@ -12,7 +12,7 @@ angular.module('AddressBook', [])
   .filter('proper', function() {
     return function(name) {
       var type = typeof name;
-      if(type !== 'string' && type !== 'number') {
+      if (type !== 'string' && type !== 'number') {
         throw new Error('proper filter can take only string/number as param');
       }
 
